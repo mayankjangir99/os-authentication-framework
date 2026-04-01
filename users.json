@@ -1,0 +1,10 @@
+{
+  "admin": {
+    "salt": "61646d696e2d",
+    "password_hash": "cf65a69933949ca9"
+  },
+  "student": {
+    "salt": "73747564656e",
+    "password_hash": "3da563ce188e1b78"
+  }
+}
