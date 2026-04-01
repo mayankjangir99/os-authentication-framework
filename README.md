@@ -181,4 +181,4 @@ python -m unittest test_auth.py
    ```
 
 ## Important Note
-This project uses a custom educational hash implemented in C to satisfy the academic systems integration requirement. In a real production environment, a standard password hashing algorithm such as Argon2, bcrypt, or scrypt should be used instead of custom hashing logic.
+This project uses a custom educational hash implemented in C to satisfy the academic systems integration requirement. In a real production environment, a standard password hashing algorithm such as Argon2, bcrypt, or scrypt should be used instead of custom hashing logic........................
