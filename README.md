@@ -19,7 +19,7 @@ project/
 ## Features
 - Username and password login
 - Password hashing through a C program called from Python
-- 4-digit OTP verification after correct password entry
+- 4-digit OTP verification after correct password entry  from my side  (viksh)
 - Account lock after 3 failed password attempts
 - JSON-based user storage with hashed passwords only
 - Modular design with separated UI, authentication, and hashing layers
