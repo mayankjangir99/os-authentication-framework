@@ -20,6 +20,8 @@ project/
 - Username and password login
 - Password hashing through a C program called from Python
 - 4-digit OTP verification after correct password entry
+- JWT token generation after successful OTP verification
+- Secure web dashboard opened with `Authorization: Bearer <token>`
 - Account lock after 3 failed password attempts
 - JSON-based user storage with hashed passwords only
 - Modular design with separated UI, authentication, and hashing layers
@@ -80,9 +82,14 @@ OTP   OTP
 OK    Wrong/Expired
  |        |
  v        v
-+--------------+   +----------------------+
-| Access Granted|  | Re-enter Login Flow  |
-+--------------+   +----------------------+
++----------------+   +----------------------+
+| Generate JWT   |   | Re-enter Login Flow  |
++----------------+   +----------------------+
+        |
+        v
++----------------------+
+| Open Secure Dashboard|
++----------------------+
 ```
 
 ## Default Users
@@ -136,6 +143,8 @@ Optional environment variables:
 $env:MONGODB_URI="mongodb://127.0.0.1:27017/secure_auth_os"
 $env:PYTHON_BIN="python"
 $env:PORT="3000"
+$env:JWT_SECRET="replace-with-a-long-random-secret"
+$env:JWT_EXPIRES_IN_SECONDS="3600"
 ```
 
 ## How to Run Tests

@@ -45,6 +45,7 @@
         <div class="stepper" aria-label="Authentication progress">
           <button class="step is-active" id="passwordStep" type="button">Password</button>
           <button class="step" id="otpStep" type="button">OTP</button>
+          <button class="step" id="dashboardStep" type="button">Dashboard</button>
         </div>
 
         <form class="auth-card" id="loginForm">
@@ -79,6 +80,31 @@
           </div>
           <p class="message" id="otpMessage" role="status"></p>
         </form>
+
+        <section class="auth-card dashboard-card hidden" id="dashboardCard" aria-label="Secure dashboard">
+          <p class="eyebrow">JWT secured session</p>
+          <h2 id="dashboardWelcome">Dashboard</h2>
+
+          <div class="dashboard-grid">
+            <article>
+              <span>Connection</span>
+              <strong id="protectedMessage">Protected API ready</strong>
+            </article>
+            <article>
+              <span>Token expiry</span>
+              <strong id="tokenExpiry">Pending</strong>
+            </article>
+          </div>
+
+          <label for="jwtToken">JWT token</label>
+          <textarea id="jwtToken" class="token-box" readonly></textarea>
+
+          <div class="button-row">
+            <button class="primary-button" id="copyToken" type="button">Copy token</button>
+            <button class="secondary-button" id="logoutButton" type="button">Logout</button>
+          </div>
+          <p class="message" id="dashboardStatus" role="status"></p>
+        </section>
 
         <aside class="demo-box" aria-label="Demo credentials">
           <span>Demo credentials</span>
