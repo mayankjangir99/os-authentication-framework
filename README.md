@@ -113,6 +113,31 @@ gcc hash.c -o hash
 python auth_ui.py
 ```
 
+## How to Run the Web Version
+The web version uses HTML, CSS, and browser JavaScript for the frontend, Node.js/Express for the backend, MongoDB for storage, and Python for authentication logic.
+
+1. Make sure MongoDB is running locally.
+2. Install Node dependencies:
+   ```powershell
+   npm install
+   ```
+3. Start the web server:
+   ```powershell
+   npm start
+   ```
+4. Open:
+   ```text
+   http://localhost:3000
+   ```
+
+Optional environment variables:
+
+```powershell
+$env:MONGODB_URI="mongodb://127.0.0.1:27017/secure_auth_os"
+$env:PYTHON_BIN="python"
+$env:PORT="3000"
+```
+
 ## How to Run Tests
 ```powershell
 python -m unittest test_auth.py

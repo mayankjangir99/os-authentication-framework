@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Auth OS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-label="Project overview">
+        <div class="brand-mark">
+          <span class="brand-icon" aria-hidden="true">SA</span>
+          <span>Secure Auth OS</span>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Operating systems project</p>
+          <h1>Two-step authentication with a systems-backed hash layer.</h1>
+          <p>
+            A web interface for credential validation, OTP verification, and account lockout,
+            powered by JavaScript, MongoDB, Python, and your existing C hashing executable.
+          </p>
+        </div>
+
+        <div class="security-list" aria-label="Security layers">
+          <article>
+            <span>01</span>
+            <p>Password hashes are generated through Python and the C hashing module.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <p>MongoDB stores salted password records and runtime verification state.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <p>OTP verification completes the login flow after password success.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="auth-panel" aria-label="Authentication form">
+        <div class="status-strip" id="connectionStatus">Checking backend...</div>
+
+        <div class="stepper" aria-label="Authentication progress">
+          <button class="step is-active" id="passwordStep" type="button">Password</button>
+          <button class="step" id="otpStep" type="button">OTP</button>
+        </div>
+
+        <form class="auth-card" id="loginForm">
+          <p class="eyebrow">Credential checkpoint</p>
+          <h2>Sign in to continue</h2>
+
+          <label for="username">Username</label>
+          <input id="username" name="username" autocomplete="username" required />
+
+          <label for="password">Password</label>
+          <div class="password-row">
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+            <button class="ghost-button" id="togglePassword" type="button">Show</button>
+          </div>
+
+          <button class="primary-button" type="submit">Continue to OTP</button>
+          <p class="message" id="loginMessage" role="status"></p>
+        </form>
+
+        <form class="auth-card hidden" id="otpForm">
+          <p class="eyebrow">Second factor</p>
+          <h2>Enter your OTP</h2>
+
+          <div class="otp-demo" id="otpDemo" aria-live="polite"></div>
+
+          <label for="otp">One-time password</label>
+          <input id="otp" name="otp" class="otp-input" inputmode="numeric" maxlength="4" required />
+
+          <div class="button-row">
+            <button class="primary-button" type="submit">Verify access</button>
+            <button class="secondary-button" id="backToLogin" type="button">Back</button>
+          </div>
+          <p class="message" id="otpMessage" role="status"></p>
+        </form>
+
+        <aside class="demo-box" aria-label="Demo credentials">
+          <span>Demo credentials</span>
+          <code>admin / SecurePass123</code>
+          <code>student / OsProject@2026</code>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
